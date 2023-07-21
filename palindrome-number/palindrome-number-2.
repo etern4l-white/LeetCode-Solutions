@@ -1,0 +1,24 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0:
+            return False
+        else:
+            lenn = len(str(x))
+            for i in range(len(str(x))//2):
+                a = x%(10**(i+1)) if i == 0 else (x%(10**(i+1)) - x%(10**(i)))//(10**(i))
+                b = x%(10**(lenn-i))
+                c = x%(10**(lenn-i-1))
+                d = (10**(lenn-i-1))
+                print(a, '==', b, c, d)
+                if not (a == (b-c)//d):
+                    return False
+        return True
+        # Old solution
+        # hi = str(x)
+        # for i in range(len(hi)//2):
+        #     if hi[i] != hi[len(hi)-i-1]: return False
+        # return True
