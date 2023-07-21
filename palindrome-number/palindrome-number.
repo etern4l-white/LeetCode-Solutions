@@ -1,0 +1,10 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        hi = str(x)
+        for i in range(len(hi)//2):
+            if hi[i] != hi[len(hi)-i-1]: return False
+        return True
